@@ -1,0 +1,13 @@
+#https://leetcode.com/problems/linked-list-cycle/
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        # Most efficient solution uses two pointer (slow, fast)
+        nodes = set()
+        count = 0
+        while len(nodes) == count:
+            if head == None:
+                return False
+            nodes.add(head)
+            head = head.next
+            count += 1
+        return True
